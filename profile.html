@@ -15,22 +15,24 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+
     <title>Profile</title>
   </head>
 
+
   <style>
     body {
-      background: #654ea3;
-      background: linear-gradient(to right, #3494e6, #ec6ead);
+      background: #FFFBF5;
       min-height: 100vh;
       overflow-x: hidden;
     }
+
   </style>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">E-Commerce</a>
+          <a class="navbar-brand" href="#">JRP Essentials</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -65,54 +67,69 @@
       </nav>
     </header>
 
-    <!-- MAIN CONTENT  -->
+
+
+
+    <!-- Profile  -->
+
+
     <main>
       <section class="container">
         <div class="row py-5 px-4">
           <div class="col-md-5 mx-auto">
-            <!-- Profile widget -->
+
+
+
+
+            <!-- Profile -->
+
+
             <h1>Profile</h1>
             <div class="bg-white shadow rounded overflow-hidden">
               <div class="px-4 pt-0 pb-4 cover">
                 <div class="media align-items-end profile-head">
                   <div class="profile mr-3">
                     <img
-                      src="https://static.vecteezy.com/system/resources/previews/019/896/008/original/male-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/768px-Default_pfp.svg.png"
                       alt="..."
                       width="130"
-                      class="rounded mb-2 mt-3"
-                    />
+                      class="rounded mb-2 mt-3"/>
                   </div>
+
                   <div class="media-body mb-5">
                     <h4 class="mt-0 mb-0" id="displayUsername"></h4>
                     <p id="displayEmail"></p>
-                  </div>
-                </div>
+                  </div> </div>
+
                 <button
                   type="button"
                   class="btn btn-primary d-flex justify-content-between"
                   data-toggle="modal"
                   data-target="#editAccount"
-                  style="margin-right: 10px"
-                >
+                  style="margin-right: 10px">
                   Edit Account
                 </button>
+
                 <button
                   type="button"
                   class="btn btn-secondary mt-2 d-flex justify-content-between"
                   data-toggle="modal"
                   data-target="#changePassword"
-                  style="margin-right: 10px"
-                >
+                  style="margin-right: 10px">
                   Change password
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <!-- <button class="btn btn-primary">Edit account</button> -->
         <div>
-          <!-- Modal for editing account-->
+
+
+
+
+          <!-- Edit Account-->
+
+
           <div
             class="modal fade"
             id="editAccount"
@@ -131,12 +148,11 @@
                     type="button"
                     class="close"
                     data-dismiss="modal"
-                    aria-label="Close"
-                  >
+                    aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <br />
+                <br/>
                 <form id="registerForm" class="p-2">
                   <div class="mb-3 form-floating">
                     <input
@@ -144,18 +160,18 @@
                       class="form-control"
                       id="floatingInputName"
                       placeholder=""
-                      required
-                    />
+                      required/>
+
                     <label for="floatingInputName">Name</label>
                   </div>
+
                   <div class="mb-3 form-floating">
                     <input
                       type="email"
                       class="form-control"
                       id="floatingInputEmail"
                       placeholder="name@example.com"
-                      required
-                    />
+                      required/>
                     <label for="floatingInputEmail">Email address</label>
                   </div>
 
@@ -165,23 +181,9 @@
                       class="form-control"
                       id="floatingPassword"
                       placeholder="Password"
-                      required
-                    />
+                      required/>
                     <label for="floatingPassword">Password</label>
                   </div>
-                  <!-- <div class="mb-3 form-floating">
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="floatingConfirmPassword"
-                      placeholder="ConfirmPassword"
-                      required
-                    />
-                    <label for="floatingConfirmPassword"
-                      >Confirm Password</label
-                    >
-                  </div> -->
-
                   <button type="submit" class="btn btn-primary">Save</button>
                 </form>
                 <div class="mb-3 px-2">
@@ -192,7 +194,14 @@
               </div>
             </div>
           </div>
-          <!-- MODAL FOR CHANGING PASSWORD -->
+
+
+
+
+
+          <!-- Change password -->
+
+
           <div
             class="modal fade"
             id="changePassword"
@@ -249,6 +258,11 @@
         </div>
       </section>
     </main>
+
+
+
+    <!-- Script -->
+
     <script src="profile.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

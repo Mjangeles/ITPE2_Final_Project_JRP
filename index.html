@@ -20,17 +20,18 @@
   <script defer src="./index.js"></script>
   <style>
     body {
-      background: #654ea3;
-      background: linear-gradient(to right, #3494e6, #ec6ead);
+      background: #FFFBF5;
+      
       min-height: 100vh;
       overflow-x: hidden;
     }
+
   </style>
   <body>
     <header class="">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">E-Commerce</a>
+          <a class="navbar-brand" href="#">JRP Essentials</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -54,27 +55,35 @@
                   class="nav-link active"
                   aria-current="page"
                   href="profile.html"
-                  >Profile</a
-                >
+                  >Profile</a>
+
               </li>
             </ul>
+            <form class="d-flex">
+              <input class="form-control me-5" type="search" placeholder="Search Products" aria-label="Search">
+          </form> 
+          <div style="transform: translate(-30px, 0px);">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+          </div>
+        </ul>
+            
 
             <button
               type="button"
               class="btn btn-primary"
               data-toggle="modal"
               data-target="#addaProduct"
-              style="margin-right: 10px"
-            >
+              style="margin-right: 10px">
+
               Add a Product
             </button>
             <button
               type="button"
               class="btn btn-primary position-relative me-3"
               data-toggle="modal"
-              data-target="#cartModal"
-            >
+              data-target="#cartModal">
               Cart
+
               <span
                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                 id="cartCount"
@@ -83,15 +92,19 @@
               </span>
             </button>
 
-            <!-- Modal for Add a product-->
+
+
+
+            <!-- Add product-->
+
             <div
               class="modal fade"
               id="addaProduct"
               tabindex="-1"
               role="dialog"
               aria-labelledby="addaProductLabel"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
+              
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -102,8 +115,8 @@
                       type="button"
                       class="close"
                       data-dismiss="modal"
-                      aria-label="Close"
-                    >
+                      aria-label="Close">
+
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
@@ -115,8 +128,8 @@
                           type="text"
                           class="form-control"
                           id="productName"
-                          required
-                        />
+                          required/>
+
                       </div>
                       <br />
 
@@ -136,8 +149,8 @@
                           type="number"
                           class="form-control"
                           id="productPrice"
-                          required
-                        />
+                          required/>
+
                         <span class="input-group-text">.00</span>
                       </div>
                       <br />
@@ -147,16 +160,16 @@
                         <input
                           type="text"
                           class="form-control"
-                          id="productImageLink"
-                        />
+                          id="productImageLink"/>
+
                       </div>
                     </div>
                     <div class="modal-footer">
                       <button
                         type="button"
                         class="btn btn-danger"
-                        data-dismiss="modal"
-                      >
+                        data-dismiss="modal">
+
                         Close
                       </button>
                       <button type="submit" class="btn btn-success">
@@ -167,23 +180,65 @@
                 </div>
               </div>
             </div>
+
+
+
+
+            <!-- View product -->
+
+
+            <div
+              class="modal fade"
+              id="viewProduct"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="viewProductLabel"
+              aria-hidden="true">
+
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="viewProductLabel">Product</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close">
+
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div id="viewProductContainer" class="modal-body"></div>
+                  <div class="modal-footer"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
     </header>
+
+
     <main>
       <section class="container pb-5">
         <h1 class="mt-5">Products</h1>
 
-        <!-- EDIT PRODUCT MODAL -->
+
+
+
+
+        <!-- Edit product -->
+
+
         <div
           class="modal fade"
           id="editProduct"
           tabindex="-1"
           role="dialog"
           aria-labelledby="editProductLabel"
-          aria-hidden="true"
-        >
+          aria-hidden="true">
+
+
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -192,8 +247,9 @@
                   type="button"
                   class="close"
                   data-dismiss="modal"
-                  aria-label="Close"
-                >
+                  aria-label="Close">
+
+
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -205,10 +261,11 @@
                       type="text"
                       class="form-control"
                       id="editProductName"
-                      required
-                    />
+                      required/>   
                   </div>
                   <br />
+
+
 
                   <div class="input-group">
                     <span class="input-group-text">Description</span>
@@ -219,6 +276,8 @@
                     ></textarea>
                   </div>
                   <br />
+
+
 
                   <div class="input-group">
                     <span class="input-group-text">Price</span>
@@ -232,21 +291,24 @@
                   </div>
                   <br />
 
+
+
                   <div class="input-group">
                     <span class="input-group-text">Product image link</span>
                     <input
                       type="text"
                       class="form-control"
-                      id="editProductImageLink"
-                    />
+                      id="editProductImageLink"/>
+
+
                   </div>
                 </div>
                 <div class="modal-footer">
                   <button
                     type="button"
                     class="btn btn-outline-success"
-                    data-dismiss="modal"
-                  >
+                    data-dismiss="modal">
+
                     Close
                   </button>
                   <button type="submit" class="btn btn-success">Save</button>
@@ -255,21 +317,28 @@
             </div>
           </div>
         </div>
+
+
         <div class="row" id="productsContainer"></div>
 
-        <!-- CART MODAL -->
+        
+
+
+        <!-- Add to cart -->
+
+
         <div
           class="modal fade"
           id="cartModal"
           tabindex="-1"
           role="dialog"
           aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
+          aria-hidden="true">
+
           <div
             class="modal-dialog modal-lg modal-dialog-centered"
-            role="document"
-          >
+            role="document">
+
             <div class="modal-content">
               <div class="modal-header border-bottom-0">
                 <h5 class="modal-title" id="exampleModalLabel">
@@ -279,8 +348,8 @@
                   type="button"
                   class="close"
                   data-dismiss="modal"
-                  aria-label="Close"
-                >
+                  aria-label="Close">
+
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -290,11 +359,11 @@
                     <thead>
                       <tr>
                         <th scope="col"></th>
-                        <th scope="col">Product</th>
+                        <th scope="col">Product Name</th>
                         <th scope="col">Price</th>
-                        <th scope="col">Qty</th>
+                        <th scope="col">Quantity</th>
                         <th scope="col">Total</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody id="cartContainer"></tbody>
@@ -309,13 +378,13 @@
                 </div>
               </div>
               <div
-                class="modal-footer border-top-0 d-flex justify-content-between"
-              >
+                class="modal-footer border-top-0 d-flex justify-content-between">
+
                 <button
                   type="button"
                   class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
+                  data-dismiss="modal">
+
                   Close
                 </button>
                 <button type="button" class="btn btn-success">Checkout</button>
@@ -325,6 +394,13 @@
         </div>
       </section>
     </main>
+
+
+
+
+
+      <!-- Script -->
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
